@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %} Blog{% endblock title %}
+
+{%block style%} 
+
+#design{
+    max-width: 60%;
+    margin: auto;
+    padding: 25px;
+    font-size: 18px;
+    font-style: italic;
+    border: 1px grey solid;
+    line-height: 33px;
+    word-spacing: 3px;
+}
+
+#centers{
+    text-align: center;
+    font-style: italic;
+}
+
+#rights{
+    text-align: right;
+}
+{%endblock style%}
+
+{%block body %}
+<h1 id="centers">My Posts</h1>
+{% for i in posts %}
+{% csrf_token %}
+    <div class="card" id="design">
+        <div class="card-body" >
+            <h1 class="card-title" id="centers" >{{i.blog_title}}</h1>
+            <p class="card-text">{{i.content | slice:"0:350"}}...... <a href="blogs/blog/{{i.id}}"><spam style="color:blue;"> read more</spam></a> </p>
+            <p class="card-text">
+
+            <p class="text-muted" id="rights">Post Date : {{i.post_date}}</p>    
+
+            <p class="text-muted" id="rights">Author : {{request.user}}</p>
+            <p id="rights">
+            <a href="admins/updatepost/{{i.id}}" style=" text-decoration: none; color:white;"> <button class="btn btn-primary"  id="rights" type="submit">  Update </button> </a> 
+            <a href="admins/deletepost/{{i.id}}" style=" text-decoration: none; color:white;"> <button class="btn btn-primary"  id="rights" type="submit">  Delete </button> </a> </p>
+
+        </p>
+        </div>
+        
+    </div>
+    <br><br>
+{%endfor%}
+
+{%endblock body %}
