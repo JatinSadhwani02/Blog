@@ -38,10 +38,10 @@
 
             <p class="text-muted" id="rights">Post Date : {{i.post_date}}</p>    
 
-            <p class="text-muted" id="rights">Author : {{request.user}}</p>
+            <p class="text-muted" id="rights">Author : <b style="color:black"> {{request.user | title}} </b> </p>
             <div id="rights">
-            <a href="admins/updatepost/{{i.id}}" style=" text-decoration: none; color:white;"> <button class="btn btn-primary"  id="rights" type="submit">  Update </button> </a><br>
-            <a href="admins/deletepost/{{i.id}}" style=" text-decoration: none; color:white;"> <button class="btn btn-primary"  id="rights" type="submit" style="padding-left:16px;">  Delete </button> </a> 
+            <a href="admins/updatepost/{{i.id}}" style=" text-decoration: none; color:white;"> <button class="btn btn-primary"  id="rights" type="submit" style="border-radius:20px;">  Update </button> </a><br>
+            <a href="admins/deletepost/{{i.id}}" style=" text-decoration: none; color:white;"> <button class="btn btn-primary"  id="rights" type="submit" style="padding-left:16px; border-radius:20px;">  Delete </button> </a> 
             </div>
         </p>
         </div>
