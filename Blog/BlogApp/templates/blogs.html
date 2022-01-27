@@ -63,7 +63,7 @@ font-style: italic;
     font-style: italic;
     border: 1px grey solid;
     line-height: 33px;
-    word-spacing: 3px;
+    word-spacing: 1px;
 }
 
 #centers{
@@ -94,7 +94,7 @@ font-style: italic;
 
             <p class="text-muted" id="rights">Post Date : {{i.post_date}}</p>    
 
-            <p class="text-muted" id="rights">Author : {{i.username}}</p>
+            <p class="text-muted" id="rights">Author : <b style="color:black"> {{i.username | upper}} </b></p>
             </p>
         </div>
     
@@ -102,7 +102,7 @@ font-style: italic;
 
         
     </div>
-    
+      <br><br>
     {%endfor%}
 
 
